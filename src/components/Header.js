@@ -1,26 +1,27 @@
 import React from 'react'
-import LightBlue from "../images/store.png" 
+import LightBlue from "../images/store.png"
+import { Link } from "react-router-dom"
 
 export const Header = () => {
   return (
     <header>
       <div className="flex place-content-center gap-4 md:justify-around sm:justify-around h-[100px] sm:h-[90px] md:h-[90px] items-center 
-      flex-wrap box-border shadow-md bg-yellow-600">
+      flex-wrap box-border shadow-md bg-yellow-500">
         <div className="flex gap-1">
-          <a href="#">
+          <Link href="#">
             <div className='w-[40px] m-1 shadow-lg'>
               <img src={LightBlue} alt=""/>
             </div>
-          </a>
-          <h1 className="text-2xl font-bold underline">Mg-ars store</h1>
+          </Link>
+          <h1 className="text-2xl font-bold underline shadow-sm">Mg-ars store</h1>
         </div>
         <ul className="flex gap-2 text-[14px] sm:text-[16px] md:text-[16px] 
         font-bold">
           <li>
-            <a href="#" className="hover:text-sky-950">INICIO</a>
+            <Link to="/" className="hover:text-sky-950">INICIO</Link>
           </li>
           <li>
-            <a href="#" className="hover:text-sky-950">PRODUCTOS</a>
+            <Link to="/products" className="hover:text-sky-950">PRODUCTOS</Link>
           </li>
         </ul>
         <div className="relative cursor-pointer">
