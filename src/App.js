@@ -1,13 +1,16 @@
 import './App.css';
 import { Header } from './components/Header';
-import { ProductList } from './components/ProductList';
+import { Layout } from './components/Layout';
 import 'boxicons';
+import { BrowserRouter as Router, Route} from "react-router-dom";
+import { Pages } from './components/Pages';
 
 function App() {
   return (
     <div>
-      <Header />
-      <ProductList />
+      <Router>
+        <Pages />
+      </Router>  
     </div>
   );
 }
