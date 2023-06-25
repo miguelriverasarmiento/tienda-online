@@ -15,7 +15,7 @@ export const ProductList = () => {
               <img src={Product} alt=""/>
             </div>
           </a>
-          <div>
+          <div className='bg-white border px-2 py-1'>
             <h1 className="font-semibold text-base font-sans">Titulo</h1>
             <p className='text-sm font-sans'>Categoria</p>
             <p className='font-mono font-bold'>$1000</p>
@@ -33,7 +33,7 @@ export const ProductList = () => {
               <img src={Product2} alt=""/>
             </div>
           </a>
-          <div>
+          <div className='bg-white border px-2 py-1'>
             <h1 className="font-semibold text-base font-sans">Titulo</h1>
             <p className='text-sm font-sans'>Categoria</p>
             <p className='font-mono font-bold'>$1000</p>
@@ -51,7 +51,7 @@ export const ProductList = () => {
               <img src={Product3} alt=""/>
             </div>
           </a>
-          <div>
+          <div className='bg-white border px-2 py-1'>
             <h1 className="font-semibold text-base font-sans">Titulo</h1>
             <p className='text-sm font-sans'>Categoria</p>
             <p className='font-mono font-bold'>$1000</p>
@@ -69,7 +69,7 @@ export const ProductList = () => {
               <img src={Product2} alt=""/>
             </div>
           </a>
-          <div>
+          <div className='bg-white border px-2 py-1'>
             <h1 className="font-semibold text-base font-sans">Titulo</h1>
             <p className='text-sm font-sans'>Categoria</p>
             <p className='font-mono font-bold'>$1000</p>
