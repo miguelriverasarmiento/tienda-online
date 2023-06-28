@@ -20,7 +20,7 @@ export const Initiation = () => {
         </div>
       </div>
       <div className='grid grid-rows-1 gap-5 lg:justify-center'>
-        <div className='mt-20 font-light'>
+        <div className='mt-20 font-light text-sm md:text-base'>
           <p>La música expresa lo que no puede ser dicho 
             y aquello sobre lo que es imposible permanecer en silencio.</p>
           <p>−Victor Hugo</p>
