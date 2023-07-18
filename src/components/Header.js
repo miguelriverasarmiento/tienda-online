@@ -1,8 +1,23 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import LightBlue from "../images/store.png"
 import { Link } from "react-router-dom"
+import { DataContext } from '../context/DataProvider'
 
+/**
+ * @class This component has, among others, the logo that gives access to the shopping cart
+ */
 export const Header = () => {
+  const value = useContext(DataContext)
+  const [menu, setMenu] = value.menu
+  const [shoppingCar] = value.shoppingCar
+
+  /**
+   * @description handles boolean values, if true displays product cart component if it is false it keeps the component closed
+   */
+  const toogleMenu = () => {
+    setMenu(!menu);
+  }
+
   return (
     <header>
       <div className="grid sm:flex md:flex place-content-center justify-items-center gap-4 
@@ -24,9 +39,10 @@ export const Header = () => {
             <Link to="/products" className="hover:text-sky-900">PRODUCTOS</Link>
           </li>
         </ul>
-        <div className="relative cursor-pointer sm:py-2">
+        <div className="relative cursor-pointer sm:py-2" onClick={() => toogleMenu()}>
           <box-icon name="cart"></box-icon>
-          <span className="absolute w-[18px] rounded-xl text-center top-1 left-6 bg-red-700 text-white">0</span>
+          <span className="absolute w-[18px] rounded-xl text-center top-1 left-6 bg-red-700 
+          text-white">{shoppingCar.length}</span>
         </div>
       </div>
     </header>
