@@ -1,88 +1,35 @@
-import React from 'react'
-import Product from "../images/product.jpg"
-import Product2 from "../images/product2.jpg"
-import Product3 from "../images/product3.jpg"
+import React, { useContext } from 'react'
+import { DataContext } from '../context/DataProvider'
+import { ProductItem } from './ProductItem'
 
+/**
+ * @class This component displays the list of products
+ */
 export const ProductList = () => {
+  
+  const value = useContext(DataContext)
+  const [products] = value.products
+
+  console.log(products)
+  
   return (
     <>
-      <h1 className="font-bold text-center mt-20 mb-10 text-sm text-yellow-800 drop-shadow-sm 
-      opacity-60">PRODUCTOS</h1>
+      <h1 className="font-bold font-serif text-center mt-20 mb-10 text-sm text-yellow-800 drop-shadow-sm 
+      opacity-60">PRODUCTOS DISPONIBLES</h1>
       <div className='grid grid-cols-1 justify-items-center ml-2 mr-2 sm:grid-cols-2 md:grid-cols-4 gap-5'>
-        <div className='flex flex-col shadow-md border-2 hover:border-lime-400 px-1 py-1'>
-          <a href="/">
-            <div className='w-[200px]'>
-              <img src={Product} alt=""/>
-            </div>
-          </a>
-          <div className='bg-white border px-2 py-1'>
-            <h1 className="font-semibold text-base font-sans">Titulo</h1>
-            <p className='text-sm font-sans'>Categoria</p>
-            <p className='font-mono font-bold'>$1000</p>
-          </div>
-          <div className='text-center'>
-              <button className='font-serif w-[200px] border-2 hover:bg-slate-300 bg-orange-200 text-emerald-900'>Añadir al carrito</button>
-            <div className='w-[200px] bg-orange-100 border-2 hover:bg-slate-300'>
-              <a href="/" className="font-serif text-emerald-900">Vista</a>
-            </div>
-          </div>
-        </div>
-        <div className='flex flex-col shadow-md border-2 hover:border-lime-400 px-1 py-1'>
-          <a href="/">
-            <div className='w-[200px]'>
-              <img src={Product2} alt=""/>
-            </div>
-          </a>
-          <div className='bg-white border px-2 py-1'>
-            <h1 className="font-semibold text-base font-sans">Titulo</h1>
-            <p className='text-sm font-sans'>Categoria</p>
-            <p className='font-mono font-bold'>$1000</p>
-          </div>
-          <div className='text-center'>
-              <button className='font-serif w-[200px] border-2 hover:bg-slate-300 bg-orange-200 text-emerald-900'>Añadir al carrito</button>
-            <div className='w-[200px] bg-orange-100 border-2 hover:bg-slate-300'>
-              <a href="/" className="font-serif text-emerald-900">Vista</a>
-            </div>
-          </div>
-        </div>
-        <div className='flex flex-col shadow-md border-2 hover:border-lime-400 px-1 py-1'>
-          <a href="/">
-            <div className='w-[200px]'>
-              <img src={Product3} alt=""/>
-            </div>
-          </a>
-          <div className='bg-white border px-2 py-1'>
-            <h1 className="font-semibold text-base font-sans">Titulo</h1>
-            <p className='text-sm font-sans'>Categoria</p>
-            <p className='font-mono font-bold'>$1000</p>
-          </div>
-          <div className='text-center'>
-              <button className='font-serif w-[200px] border-2 hover:bg-slate-300 bg-orange-200 text-emerald-900'>Añadir al carrito</button>
-            <div className='w-[200px] bg-orange-100 border-2 hover:bg-slate-300'>
-              <a href="/" className="font-serif text-emerald-900">Vista</a>
-            </div>
-          </div>
-        </div>
-        <div className='flex flex-col shadow-md border-2 hover:border-lime-400 px-1 py-1'>
-          <a href="/">
-            <div className='w-[200px]'>
-              <img src={Product2} alt=""/>
-            </div>
-          </a>
-          <div className='bg-white border px-2 py-1'>
-            <h1 className="font-semibold text-base font-sans">Titulo</h1>
-            <p className='text-sm font-sans'>Categoria</p>
-            <p className='font-mono font-bold'>$1000</p>
-          </div>
-          <div className='text-center'>
-              <button className='font-serif w-[200px] border-2 hover:bg-slate-300 bg-orange-200 text-emerald-900'>Añadir al carrito</button>
-            <div className='w-[200px] bg-orange-100 border-2 hover:bg-slate-300'>
-              <a href="/" className="font-serif text-emerald-900">Vista</a>
-            </div>
-          </div>
-        </div>
+       {products.map((product) => (
+        <ProductItem 
+          key={product.id}
+          id={product.id}
+          title={product.title}
+          price={product.price}
+          image={product.image}
+          category={product.category}
+          amount={product.amount}
+        />
+       ))}
+       
       </div>
-      
     </>
   )
 }
