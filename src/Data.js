@@ -8,6 +8,7 @@ const data = {
             image: require("./images/product.jpg"),
             category: "tools",
             amount: 1,
+            description: "Longitud de escala 24”, el circuito con selectores y controles dobles, el puente con cordal flotante y palanca de vibrato. Ademas de unos increíbles acabados de formidable colorido",
 
         },
         {
@@ -17,6 +18,7 @@ const data = {
             image: require("./images/product2.jpg"),
             category: "tools",
             amount: 1,
+            description: "Tapa, contorno y fondo de Arce flameado. Diapasón de Palisandro. Clavijeros dorados. Perfil de celuloide en mástil y pala. Decoraciones nacaradas. Ecualizador, 4 bandas con afinador. CRO-300 CN, Natural Brillo.",
 
         },
         {
@@ -26,6 +28,7 @@ const data = {
             image: require("./images/product3.jpg"),
             category: "tools",
             amount: 1,
+            description: "Es liviana y cómoda gracias a su cuerpo en forma de «C», cuenta con tres pastillas de bobina, además de un puente rígido.",
 
         },
         {
@@ -35,6 +38,7 @@ const data = {
             image: require("./images/product4.jpg"),
             category: "tools",
             amount: 1,
+            description: "Un impresionante instrumento híbrido que combina una acción completa de teclado de piano de cola y un apagador con las últimas tecnologías digitales de sonido y amplificación",
 
         }
     ],
