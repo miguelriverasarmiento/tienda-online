@@ -10,7 +10,6 @@ export const Car = () => {
   const [menu, setMenu] = value.menu;
   const [shoppingCar, setShoppingCar] = value.shoppingCar;
   const [total] = value.total;
-  console.log(shoppingCar)
 
   /**
    * @description Handles boolean values, if true displays product cart component if it is false it keeps the component closed
