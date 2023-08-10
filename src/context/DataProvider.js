@@ -1,5 +1,6 @@
 import { useEffect, useState, createContext } from "react";
 import Data from '../Data.js'
+import { useAuth0 } from '@auth0/auth0-react'
 
 /**
  * @class The context handles global variables and methods. It will be consumed globally.
@@ -11,6 +12,7 @@ export const DataProvider = (props) => {
     const [menu, setMenu] = useState(false)
     const [shoppingCar, setShoppingCar] = useState([])
     const [total, setTotal] = useState(0);
+    const { isAuthenticated } = useAuth0();
 
     useEffect(() => {
         const productList = Data.items
@@ -28,18 +30,18 @@ export const DataProvider = (props) => {
      */
     const addShoppingCar = (id) => {
         const check = shoppingCar.every(item => item.id !== id)
-        if (check) {
+        if (check && isAuthenticated === true) {
             const dataProduct = products.filter(prod => {
                 return prod.id === id
             })
             setShoppingCar([...shoppingCar, ...dataProduct])
             
-        }
+        } else window.confirm("Registrate o inicia sesion para comprar...")
     }
 
     useEffect(() => {
         const dataCar = JSON.parse(localStorage.getItem('dataCar'));
-        if (dataCar){
+        if (dataCar && isAuthenticated === true){
             setShoppingCar(dataCar)
         }
     }, []);
