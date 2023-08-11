@@ -29,19 +29,25 @@ export const DataProvider = (props) => {
      * @return {number}
      */
     const addShoppingCar = (id) => {
-        const check = shoppingCar.every(item => item.id !== id)
-        if (check && isAuthenticated === true) {
-            const dataProduct = products.filter(prod => {
-                return prod.id === id
-            })
-            setShoppingCar([...shoppingCar, ...dataProduct])
-            
-        } else window.confirm("Registrate o inicia sesion para comprar...")
+        if (isAuthenticated === true) {
+            const check = shoppingCar.every(item => item.id !== id)
+            if (check) {
+                const dataProduct = products.filter(prod => {
+                    return prod.id === id
+                })
+                setShoppingCar([...shoppingCar, ...dataProduct])
+            } else {
+                window.confirm("Este producto ya esta en el carrito...");
+            }
+        } else {
+            window.confirm("Registrate o inicia sesion para comprar...");
+        }
+        
     }
 
     useEffect(() => {
         const dataCar = JSON.parse(localStorage.getItem('dataCar'));
-        if (dataCar && isAuthenticated === true){
+        if (dataCar){
             setShoppingCar(dataCar)
         }
     }, []);
