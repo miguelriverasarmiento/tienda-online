@@ -10,7 +10,7 @@ export const Initiation = () => {
   const { logout } = useAuth0();
 
   if (isLoading) {
-    return <div className='mt-10 mx-5 sm:mx-12 md:mx-20 lg:mx-28 xl:mx-40 2xl:mx-44 text-yellow-800 
+    return <div className='min-h-screen mt-10 mx-5 sm:mx-12 md:mx-20 lg:mx-28 xl:mx-40 2xl:mx-44 text-yellow-800 
     sm:text-lg md:text-lg font-extralight'>Loading...</div>;
   }
 
@@ -25,7 +25,7 @@ export const Initiation = () => {
             </div>
             <div className='text-sm w-[135px] px-4 py-2 border-2 border-amber-200 bg-amber-300
             hover:bg-yellow-300 rounded-md'>
-              <button onClick={() => logout({ returnTo: window.location.origin })}>
+              <button onClick={() => logout({ returnTo: window.location.origin }, localStorage.removeItem("dataCar"))}>
                 <h1>Cerrar sesion</h1>
               </button>
             </div>
